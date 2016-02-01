@@ -19,12 +19,12 @@ CREATE TABLE `wp_revisr` (
   `event` varchar(42) NOT NULL,
   `user` varchar(60) DEFAULT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `wp_revisr` WRITE;
 /*!40000 ALTER TABLE `wp_revisr` DISABLE KEYS */;
-INSERT INTO `wp_revisr` VALUES (1,'2016-01-31 23:50:36','Successfully created a new repository.','init','adminus');
+INSERT INTO `wp_revisr` VALUES (1,'2016-01-31 23:50:36','Successfully created a new repository.','init','adminus'),(2,'2016-01-31 23:56:05','Successfully backed up the database.','backup','adminus'),(3,'2016-01-31 23:59:51','Error pushing changes to the remote repository.','error','adminus'),(4,'2016-02-01 00:02:06','Committed <a href=\"http://trento.creotip.io/wp-admin/admin.php?page=revisr_view_commit&commit=0df975d&success=true\">#0df975d</a> to the local repository.','commit','adminus'),(5,'2016-02-01 00:02:06','Error pushing changes to the remote repository.','error','adminus'),(6,'2016-02-01 00:06:48','There was an error committing the changes to the local repository.','error','adminus'),(7,'2016-02-01 00:07:10','Error pushing changes to the remote repository.','error','adminus'),(8,'2016-02-01 00:09:16','Successfully pushed 2 commits to origin/master.','push','adminus');
 /*!40000 ALTER TABLE `wp_revisr` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
