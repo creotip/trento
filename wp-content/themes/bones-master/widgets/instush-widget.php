@@ -30,6 +30,11 @@ class Instush_Widget extends WP_Widget {
 	}
 	/**
 	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
@@ -145,4 +150,8 @@ class Instush_Widget extends WP_Widget {
 		</p>
 		<?php
 	}
+	
+
+	
 } // class Instush_Widget
+
