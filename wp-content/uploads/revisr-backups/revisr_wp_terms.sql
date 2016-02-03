@@ -20,12 +20,12 @@ CREATE TABLE `wp_terms` (
   PRIMARY KEY (`term_id`),
   KEY `slug` (`slug`(191)),
   KEY `name` (`name`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `wp_terms` WRITE;
 /*!40000 ALTER TABLE `wp_terms` DISABLE KEYS */;
-INSERT INTO `wp_terms` VALUES (1,'Uncategorized','uncategorized',0),(2,'top-menu','top-menu',0),(3,'Blog','blog',0),(4,'Design','design',0),(5,'Shirts','shirts',0),(6,'Portfolio','portfolio',0),(7,'Photography','photography',0),(8,'Jackets','jackets',0),(9,'Web','web',0),(10,'Video','video',0),(11,'custom cat','custom-cat',0),(12,'design','design',0),(13,'video','video',0),(14,'shop','shop',0),(15,'mega-menu','mega-menu',0);
+INSERT INTO `wp_terms` VALUES (1,'Uncategorized','uncategorized',0),(2,'top-menu','top-menu',0),(3,'Blog','blog',0),(4,'Design','design',0),(5,'Shirts','shirts',0),(6,'Portfolio','portfolio',0),(7,'Photography','photography',0),(8,'Jackets','jackets',0),(9,'Web','web',0),(10,'Video','video',0),(11,'custom cat','custom-cat',0),(12,'design','design',0),(13,'video','video',0),(14,'shop','shop',0),(15,'mega-menu','mega-menu',0),(16,'simple','simple',0),(17,'grouped','grouped',0),(18,'variable','variable',0),(19,'external','external',0),(20,'Black','black',0),(21,'Blue','blue',0),(22,'Green','green',0),(23,'Clothing','clothing',0),(24,'Hoodies','hoodies',0),(25,'Music','music',0),(26,'Posters','posters',0),(27,'Singles','singles',0),(28,'T-shirts','t-shirts',0),(29,'Albums','albums',0);
 /*!40000 ALTER TABLE `wp_terms` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
