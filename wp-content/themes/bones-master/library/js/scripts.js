@@ -105,6 +105,26 @@ function loadGravatars() {
 } // end function
 
 
+jQuery(document).ready(function() {
+var stickyNavTop = jQuery('.header').offset().top;
+ 
+var stickyNav = function(){
+var scrollTop = jQuery(window).scrollTop();
+      
+if (scrollTop > stickyNavTop) { 
+    jQuery('.header').addClass('sticky');
+} else {
+    jQuery('.header').removeClass('sticky'); 
+}
+};
+ 
+stickyNav();
+ 
+jQuery(window).scroll(function() {
+    stickyNav();
+});
+});
+
 // Bottom sticky footer
 function bottomFooter() {
 

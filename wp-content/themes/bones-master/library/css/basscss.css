@@ -561,11 +561,6 @@ Colors
     border-left: 2px solid;
     border-right: 2px solid;
     transition: all 350ms ease;
-    -moz-border-image: url(../images/txtr.png) 17% round round;
-    -webkit-border-image: url(../images/txtr.png) 17% round round; 
-    -o-border-image: url(../images/txtr.png) 17% round round;  
-    border-image: url(../images/txtr.png) 17% round round;
-    border-width: 4px;
 }
 
 .btn-primary:hover, button:hover {
@@ -610,7 +605,10 @@ button:disabled
 }
 
 
-.bold    { font-weight: bold }
+.bold, 
+h3.widget-title
+{ font-weight: bold }
+
 .regular { font-weight: normal }
 .italic  { font-style: italic }
 .caps    { text-transform: uppercase; letter-spacing: .2em; }

@@ -43,14 +43,13 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
-
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 				<div class="toolbar">
 					<div class="wrap wrap-toolbar">
 						<span>Cart<i class="fa fa-shopping-bag px1"></i></span>
 						<span class="left">FREE SHIPPING ON ORDERS $75!</span>
 					</div>		
 				</div>
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 				<div id="inner-header" class="wrap cf md-show">
 
 					<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
