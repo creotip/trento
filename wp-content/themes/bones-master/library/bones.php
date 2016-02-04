@@ -113,16 +113,25 @@ function bones_gallery_style($css) {
 }
 
 
+//add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+		wp_dequeue_style( 'woocommerce_frontend_styles' );
+    wp_enqueue_style('woocommerce_frontend_styles');
 /*********************
 SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
 function bones_scripts_and_styles() {
+	
+
 
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
   if (!is_admin()) {
+		
+		//wp_dequeue_style( 'woocommerce_frontend_styles' );
+   // wp_enqueue_style('woocommerce_frontend_styles');
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
@@ -170,7 +179,7 @@ function bones_scripts_and_styles() {
 }
 
 
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
 /*********************
 THEME SUPPORT
 *********************/
