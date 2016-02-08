@@ -148,5 +148,6 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
   bottomFooter();
+	jQuery('.imagewrapper').slick();
 
 }); /* end of as page load scripts */

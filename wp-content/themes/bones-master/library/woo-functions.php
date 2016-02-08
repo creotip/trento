@@ -12,32 +12,59 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	
 	return $fragments;
 }
-////////
 
 
-// Change number or products per row to 3
+
+/////************//
+/// Change number or products per row to 3 //////////////////////
+//****************//
+/*
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
 	function loop_columns() {
 		return 3; // 3 products per row
 	}
 }
-///////
+*/
 
 
-// Display 24 products per page. Goes in functions.php
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 ); 
-//
+/////************//
+/// Display 24 products per page. Goes in functions.php //////////////////////
+//****************//
+//add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 ); 
 
 
-/* This snippet removes the action that inserts thumbnails to products in teh loop
- * and re-adds the function customized with our wrapper in it.
- * It applies to all archives with products.
- *
- * @original plugin: WooCommerce
- * @author of snippet: Brian Krogsard
- */
+/////************//
+/// Remove hrefs //////////////////////
+//****************//
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+add_action( 'woocommerce_before_shop_loop_item', 'mycode_woocommerce_template_loop_product_link_open', 20 );
 
+
+/////************//
+/// Remove Title - Create Custom Title //////////////////////
+//****************//
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+
+// add a new fonction to the hook
+if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
+    function woocommerce_template_loop_product_title() {
+        echo change_product_title();
+    } 
+}
+
+if ( ! function_exists( 'change_product_title' ) ) {   
+    function change_product_title( ) {
+	
+			echo $woo_title = '<h3><a href="'.get_permalink($product_id).'">'.get_the_title($product_id).'</a></h3>';
+			
+    }
+}
+
+/////************//
+/// Remove Image - Create Custom Image and Thumbnails //////////////////////
+//****************//
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
@@ -68,7 +95,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
         if ( has_post_thumbnail() ) {               
             		  
 			  //Main Cat Image
-			  $output .= '<div><img class="cat-img" src="' .get_the_post_thumbnail_src(get_the_post_thumbnail()) .'" alt="'.$image_title.'" /></div>';   
+			  $output .= '<div class="woo-img-slide">' .get_the_post_thumbnail( $post->ID, $size, array( 'alt' => get_the_title()) ) .'</div>';   
 			  	
 				//Thumbnails  
 				foreach( $attachment_ids as $attachment_id ) 
@@ -88,8 +115,9 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 }
 
 
-
-// Replace WooThemes Breadcrumbs with Yoast breadcrumbs
+/////************//
+///Replace WooThemes Breadcrumbs with Yoast breadcrumbs //////////////////////
+//****************//
 add_action( 'init', 'hh_breadcrumbs' );
 
 function hh_breadcrumbs() {

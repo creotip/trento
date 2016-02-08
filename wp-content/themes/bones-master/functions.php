@@ -17,6 +17,8 @@ require_once( 'library/bones.php' );
 // require_once( 'library/admin.php' );
 
 add_theme_support( 'woocommerce' );
+require_once( 'library/woo-functions.php' );
+require_once( 'plugins/woocommerce-customizer/woo-customizer.php' );
 
 
 
