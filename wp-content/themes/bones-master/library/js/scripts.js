@@ -148,6 +148,10 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
   bottomFooter();
-	jQuery('.imagewrapper').slick();
+	jQuery('.imagewrapper').slick({
+		speed: 200,
+			prevArrow: '<div class="rps-prev"><i class="fa fa-angle-left"></i></div>',
+			nextArrow: '<div class="rps-next"><i class="fa fa-angle-right"></i></div>'
+	});
 
 }); /* end of as page load scripts */

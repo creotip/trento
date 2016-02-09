@@ -1487,6 +1487,7 @@ right: 0;
     display: block;
 }
 
+
 .rps-prev .fa:hover, .rps-next .fa:hover {
     opacity: 1;
 }
@@ -1685,4 +1686,22 @@ TRENTO IMAGE WIDGET;
 *********************/
 .widget_trento_image img {
     height: auto;
+}
+
+
+/*********************
+WOOCOMMERCE
+*********************/
+.woocommerce ul.products .imagewrapper.slick-slider {
+    margin: 0;
+}
+.woocommerce ul.products .imagewrapper .rps-prev .fa, .imagewrapper .rps-next .fa {
+		font-size: 40px;
+	    color: #484848;
+}
+
+.woocommerce ul.products li.product h3 {
+    padding: .5em 0;
+    margin: 0;
+    font-size: 0.75rem;
 }
