@@ -44,7 +44,28 @@
 
 		<div id="container">
 				<div class="toolbar">
-					<div class="wrap wrap-toolbar">
+					<div class="wrap wrap-toolbar relative">
+						
+							 <?php global $woocommerce; ?> 
+								<div class="mini-cart right">							  
+									<!-- Dropdown cart -->
+									<?php if (class_exists('Woocommerce')) { ?>
+										<a href="#" class="toggle-cart-dropdown">
+
+											<span class="mini-cart-item-count"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
+											<span><?php echo __('Items'); ?></span>
+											<span class="mini-cart-item-amount">/<?php echo $woocommerce->cart->get_cart_total(); ?></span>
+											@
+										</a>
+
+										<div class="mini-cart-dropdown absolute right-0">
+											<?php the_widget( 'WC_Widget_Cart' ); ?> 
+										</div>			
+									<?php } ?>
+									<!-- End Dropdown cart -->							  
+
+								</div>	
+						
 						<span>Cart<i class="fa fa-shopping-bag px1"></i></span>
 						<span class="left">FREE SHIPPING ON ORDERS $75!</span>
 					</div>		

@@ -138,16 +138,30 @@ function bottomFooter() {
 	
 }
 
+function miniCart(){
+	
+	jQuery(function() {                       //run when the DOM is ready
+		jQuery(".mini-cart").hover(function() {  //use a class, since your ID gets mangled
+			jQuery(".mini-cart-dropdown").toggleClass("show-mini-cart");      //add the class to the clicked element
+		});
+
+	})
+
+}
+
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
   /*
-   * Let's fire off the gravatar function
    * You can remove this if you don't need it
   */
   loadGravatars();
+	
   bottomFooter();
+	
+  miniCart();
+	
 	jQuery('.imagewrapper').slick({
 		speed: 200,
 			prevArrow: '<div class="rps-prev"><i class="fa fa-angle-left"></i></div>',

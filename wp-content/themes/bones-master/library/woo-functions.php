@@ -14,6 +14,56 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 }
 
 
+/////************//
+/// Show category name in category products //////////////////////
+//****************//
+function wc_category_title_archive_products(){
+
+    $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+
+    if ( $product_cats && ! is_wp_error ( $product_cats ) ){
+
+        $single_cat = array_shift( $product_cats ); ?>
+
+        <div class="product_category_title"><?php echo $single_cat->name; ?></div>
+
+<?php }
+}
+add_action( 'woocommerce_after_shop_loop_item', 'wc_category_title_archive_products', 5 );
+
+
+
+/////************//
+/// Show category thumbnail in category page //////////////////////
+//****************//
+function woocommerce_category_image() {
+    if ( is_product_category() ){
+	    global $wp_query;
+	    $cat = $wp_query->get_queried_object();
+	    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+	    $image = wp_get_attachment_url( $thumbnail_id );
+	    if ( $image ) {
+		    echo '<img src="' . $image . '" alt="" />';
+		}
+	}
+}
+
+add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
+
+/////************//
+/// Show category name and image //////////////////////
+//****************//
+
+/*
+$terms = get_the_terms( $post->ID, 'product_cat' );
+foreach ( $terms as $term ){
+  $category_name = $term->name;
+  $category_thumbnail = get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true);
+  $image = wp_get_attachment_url($category_thumbnail);
+	echo '<h3>'.$category_name.'</h3>';
+  echo '<img class="absolute category-image" src="'.$image.'">';
+}
+*/
 
 /////************//
 /// Change number or products per row to 3 //////////////////////
@@ -100,9 +150,12 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 				//Thumbnails  
 				foreach( $attachment_ids as $attachment_id ) 
 					{
-						$thumb_title = esc_attr( get_the_title( $attachment_id ) );
-						$output .= '<div><img class="cat-thumbs" src="' .wp_get_attachment_url( $attachment_id ). '" alt="'.$thumb_title.'" /></div>';
+						$image_attributes = wp_get_attachment_image_src( $attachment_id, $size );
 					
+						$thumb_title = esc_attr( get_the_title( $attachment_id ) );
+						$output .= '<div><img class="cat-thumbs" src="' .$image_attributes[0]. '" alt="'.$thumb_title.'" /></div>';
+					
+
 					}	
 			  
         }       
