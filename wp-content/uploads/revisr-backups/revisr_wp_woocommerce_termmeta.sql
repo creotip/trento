@@ -25,7 +25,7 @@ CREATE TABLE `wp_woocommerce_termmeta` (
 
 LOCK TABLES `wp_woocommerce_termmeta` WRITE;
 /*!40000 ALTER TABLE `wp_woocommerce_termmeta` DISABLE KEYS */;
-INSERT INTO `wp_woocommerce_termmeta` VALUES (1,23,'order','0'),(2,24,'order','0'),(3,25,'order','0'),(4,26,'order','0'),(5,27,'order','0'),(6,28,'order','0'),(7,29,'order','0'),(8,23,'product_count_product_cat','12'),(9,28,'product_count_product_cat','6'),(10,24,'product_count_product_cat','6'),(11,26,'product_count_product_cat','5'),(12,29,'product_count_product_cat','4'),(13,25,'product_count_product_cat','6'),(14,27,'product_count_product_cat','2'),(15,20,'product_ids','a:2:{i:0;s:3:\"163\";i:1;s:3:\"167\";}'),(16,21,'product_ids','a:1:{i:0;s:3:\"167\";}'),(17,22,'product_ids','a:1:{i:0;s:3:\"163\";}'),(18,23,'display_type',''),(19,23,'thumbnail_id','110');
+INSERT INTO `wp_woocommerce_termmeta` VALUES (1,23,'order','0'),(2,24,'order','0'),(3,25,'order','0'),(4,26,'order','0'),(5,27,'order','0'),(6,28,'order','0'),(7,29,'order','0'),(8,23,'product_count_product_cat','12'),(9,28,'product_count_product_cat','6'),(10,24,'product_count_product_cat','6'),(11,26,'product_count_product_cat','5'),(12,29,'product_count_product_cat','4'),(13,25,'product_count_product_cat','6'),(14,27,'product_count_product_cat','2'),(15,20,'product_ids','a:2:{i:0;s:3:\"163\";i:1;s:3:\"167\";}'),(16,21,'product_ids','a:1:{i:0;s:3:\"167\";}'),(17,22,'product_ids','a:1:{i:0;s:3:\"163\";}'),(18,23,'display_type',''),(19,23,'thumbnail_id','194');
 /*!40000 ALTER TABLE `wp_woocommerce_termmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
