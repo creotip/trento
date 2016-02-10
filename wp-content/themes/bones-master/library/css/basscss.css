@@ -76,6 +76,11 @@ font-family: sans-serif;
 body {
 margin: 0; }
 
+::selection {
+    background: #111;
+    color: #fff;
+}
+
 /* ==========================================================================
 Links
 ========================================================================== */
@@ -90,7 +95,9 @@ outline: thin dotted; }
 
 a:active,
 a:hover {
-outline: 0; }
+outline: 0;
+text-decoration: underline;
+}
 
 /* ==========================================================================
 Typography
@@ -423,6 +430,7 @@ Colors
 .muted { opacity: .5 }
 
 .bg-black  { background-color: #111 }
+.bg-black-2  { background-color: #272b2f }
 .bg-gray   { background-color: #aaa }
 .bg-silver { background-color: #ddd }
 .bg-white  { background-color: #fff }
@@ -610,6 +618,10 @@ h3.widget-title
 { font-weight: bold }
 
 .regular { font-weight: normal }
+
+.lighter {
+  font-weight: lighter;
+}
 .italic  { font-style: italic }
 .caps    { text-transform: uppercase; letter-spacing: .2em; }
 
