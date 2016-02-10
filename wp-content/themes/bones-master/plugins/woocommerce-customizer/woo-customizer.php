@@ -341,7 +341,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 			// Product columns
 			function woocommerce_pac_columns( $classes ) {
 				$columns 	= get_option( 'wc_pac_columns' );
-				$classes[] 	= 'product-columns-' . $columns;
+				$classes[] 	= 'columns-' . $columns;
 				return $classes;
 			}
 

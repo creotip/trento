@@ -15,8 +15,42 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 
 
 /////************//
+/// Default image dimensions //////////////////////
+//****************//
+add_action( 'init', 'yourtheme_woocommerce_image_dimensions', 1 );
+
+/**
+ * Define image sizes
+ */
+function yourtheme_woocommerce_image_dimensions() {
+  	$catalog = array(
+		'width' 	=> '350',	// px
+		'height'	=> '400',	// px
+		'crop'		=> 1 		// true
+	);
+
+	$single = array(
+		'width' 	=> '600',	// px
+		'height'	=> '600',	// px
+		'crop'		=> 1 		// true
+	);
+
+	$thumbnail = array(
+		'width' 	=> '180',	// px
+		'height'	=> '180',	// px
+		'crop'		=> 0 		// false
+	);
+
+	// Image sizes
+	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
+	update_option( 'shop_single_image_size', $single ); 		// Single product image
+	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
+}
+
+/////************//
 /// Show category name in category products //////////////////////
 //****************//
+/*
 function wc_category_title_archive_products(){
 
     $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
@@ -30,7 +64,7 @@ function wc_category_title_archive_products(){
 <?php }
 }
 add_action( 'woocommerce_after_shop_loop_item', 'wc_category_title_archive_products', 5 );
-
+*/
 
 
 /////************//
@@ -85,7 +119,7 @@ if (!function_exists('loop_columns')) {
 
 
 /////************//
-/// Remove hrefs //////////////////////
+/// Remove hrefs from category items //////////////////////
 //****************//
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 add_action( 'woocommerce_before_shop_loop_item', 'mycode_woocommerce_template_loop_product_link_open', 20 );
