@@ -338,6 +338,46 @@ hyphenate-lines: 3;
 -o-font-feature-settings: "liga", "dlig";
 font-feature-settings: "liga", "dlig"; }
 
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+text-rendering: optimizelegibility;
+font-weight: 500;
+text-transform: uppercase;
+ }
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+text-decoration: none; 
+}
+
+h1, .h1 {
+font-size: 2.5em;
+line-height: 1.333em; }
+
+h2, .h2 {
+font-size: 1.75em;
+line-height: 1.4em;
+margin-bottom: 0.375em; }
+
+h3, .h3 {
+font-size: 1em; 
+letter-spacing: 3px;
+}
+
+h4, .h4 {
+font-size: 0.8125rem;
+text-transform: uppercase;
+letter-spacing: 3px;  
+ }
+
+h5, .h5 {
+font-size: 0.75rem;
+line-height: 2.09em;
+text-transform: uppercase;
+letter-spacing: 2px; }
+
+
 /*********************
 LINK STYLES
 *********************/

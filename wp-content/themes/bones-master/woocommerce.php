@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<div id="content" class="content-woocommerce">
 				
 				<div id="inner-content" class="wrap cf">
 					

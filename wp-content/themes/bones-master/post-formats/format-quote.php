@@ -4,7 +4,7 @@
 
                 <header class="article-header">
 
-                  <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+                  <h1 class="entry-title single-title" itemprop="headline"><span><?php the_title(); ?></span></h1>
 
                   <p class="byline vcard">
                     <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',

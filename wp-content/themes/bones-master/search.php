@@ -5,7 +5,10 @@
 				<div id="inner-content" class="wrap cf">
 
 					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main">
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						<h1 class="archive-title">
+							<span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> 
+							<span><?php echo esc_attr(get_search_query()); ?></span>
+						</h1>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -13,7 +16,13 @@
 
 								<header class="entry-header article-header">
 
-									<h3 class="search-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<h3 class="search-title entry-title">
+										
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+											<span><?php the_title(); ?></span>
+											</a>
+										
+									</h3>
 
                   						<p class="byline entry-meta vcard">
                     							<?php printf( __( 'Posted %1$s by %2$s', 'bonestheme' ),
@@ -51,7 +60,7 @@
 
 									<article id="post-not-found" class="hentry cf">
 										<header class="article-header">
-											<h1><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></h1>
+											<h1><span><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></span></h1>
 										</header>
 										<section class="entry-content">
 											<p><?php _e( 'Try your search again.', 'bonestheme' ); ?></p>

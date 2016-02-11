@@ -12,7 +12,11 @@
 
 								<header class="article-header">
 
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+									<h1 class="h2 entry-title">
+										<span>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+											</span>
+									</h1>
 									<p class="byline entry-meta vcard">
                                                                         <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
                        								/* the time the post was published */
@@ -51,7 +55,7 @@
 
 									<article id="post-not-found" class="hentry cf">
 											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+												<h1><span><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></span></h1>
 										</header>
 											<section class="entry-content">
 												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>

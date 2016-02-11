@@ -18,7 +18,7 @@
 
                 <header class="article-header entry-header">
 
-                  <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+                  <h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><span><?php the_title(); ?></span></h1>
 
                   <p class="byline entry-meta vcard">
 

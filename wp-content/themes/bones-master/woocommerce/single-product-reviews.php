@@ -27,12 +27,16 @@ if ( ! comments_open() ) {
 ?>
 <div id="reviews">
 	<div id="comments">
-		<h2><?php
+		<h2>
+			<span>
+			<?php
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
 				printf( _n( '%s review for %s', '%s reviews for %s', $count, 'woocommerce' ), $count, get_the_title() );
 			else
 				_e( 'Reviews', 'woocommerce' );
-		?></h2>
+		?>
+				</span>
+				</h2>
 
 		<?php if ( have_comments() ) : ?>
 

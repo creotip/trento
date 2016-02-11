@@ -615,45 +615,6 @@ width: 96%;
 margin: 0 auto; }
 
 
-
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-text-rendering: optimizelegibility;
-font-weight: 500;
-text-transform: uppercase;
- }
-h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
-text-decoration: none; 
-}
-
-h1, .h1 {
-font-size: 2.5em;
-line-height: 1.333em; }
-
-h2, .h2 {
-font-size: 1.75em;
-line-height: 1.4em;
-margin-bottom: 0.375em; }
-
-h3, .h3 {
-font-size: 1em; 
-letter-spacing: 3px;
-}
-
-h4, .h4 {
-font-size: 0.8125rem;
-text-transform: uppercase;
-letter-spacing: 3px;  
- }
-
-h5, .h5 {
-font-size: 0.75rem;
-line-height: 2.09em;
-text-transform: uppercase;
-letter-spacing: 2px; }
-
 /*********************
 HEADER STYLES
 *********************/
@@ -777,18 +738,9 @@ background-color: white;
 margin-bottom: 1.5em;
 }
 .hentry header {
-border-bottom: 1px solid #f8f9fa;
     padding: 1.5em 0 0 0;}
 
-.article-header:after, 
-.hentry header:after {
-    content: "";
-    height: 5px;
-    float: left;
-    width: 100%;
-    margin: 1rem 0;
-    background: url(../images/txtr.png) repeat scroll 0 0 #FFF;
-}
+
 .hentry footer {
 padding: 1.5em;
 border-top: 1px solid #f8f9fa; 
@@ -803,6 +755,31 @@ margin: 0;
 margin: 0; 
 text-transform: uppercase;
 letter-spacing: 4px;
+	    position: relative;
+	    text-align: center;
+	font-weight: 700;
+}
+.single-title:after, 
+.page-title:after, 
+.single-title:after, 
+.entry-title:after, 
+.woocommerce-page h1.page-title:after {
+    content: "";
+    height: 6px;
+    background: url(../images/txtr.png) repeat;
+    float: left;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+
+.single-title span, .page-title span, .entry-title span {
+    padding: 0 2rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .byline {
@@ -811,6 +788,7 @@ letter-spacing: 4px;
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 3px;
+	    text-align: center;
 }
 
 /* entry content */
@@ -1713,17 +1691,19 @@ WOOCOMMERCE
 
 /*** Category ***/
 .woocommerce-page h1.page-title {
-text-align: center;
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 0;
     font-weight: 900;
     font-size: 2rem;
 }
-.woocommerce-page h1.page-title:after {
-    content: "";
-    height: 6px;
-    background: url(../images/txtr.png) repeat;
-    float: left;
-    width: 100%;
+
+.woocommerce .woocommerce-breadcrumb {
+    margin: 0 0 1em;
+    padding: 0;
+    font-size: .7rem;
+    color: #777;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 
@@ -1816,6 +1796,17 @@ text-align: center;
 
 /*** Product Page ***/
 
+.woocommerce div.product .product_title {
+    clear: none;
+    margin-top: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.product_title.entry-title:after {
+    display: none;
+}
+
 .woocommerce div.product .woocommerce-tabs ul.tabs {
     list-style: none;
     padding: 0 0 0 5px;
@@ -1845,4 +1836,10 @@ text-align: center;
     margin-top: -1px;
     z-index: 45;
     position: relative;
+}
+
+/*** Cart Page ***/
+
+.byline.vcard {
+    display: none;
 }

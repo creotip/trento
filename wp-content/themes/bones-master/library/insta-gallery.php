@@ -45,7 +45,7 @@ add_shortcode("instush", "instush_display_slider");
   $generated_id = uniqid();
 ?>  
 <div class="wrap-instush <?php echo $generated_id; ?>">
-  <h3 class="center caps">Instagram feed Gallery</h3> 
+  <h3 class="center caps"><span>Instagram feed Gallery</span></h3> 
   <ul class="instush-<?php echo $atts['id']; ?> instush"></ul> 
   <div class="load-more clearfix center">  
     <button class="load-more-btn btn btn-outline center caps"><span>load more</span></button>   

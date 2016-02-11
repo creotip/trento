@@ -47,6 +47,32 @@ function yourtheme_woocommerce_image_dimensions() {
 	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
 }
 
+
+
+
+/*** Change shop title *****/
+
+add_filter( 'woocommerce_page_title', 'woo_shop_page_title');
+
+function woo_shop_page_title( $page_title ) {
+		$new_title = "<span>" . $page_title . "</span>";
+  	echo $new_title;
+   
+}
+
+
+
+
+function woocommerce_custom_breadcrumb() {
+	$new_bread =  woocommerce_breadcrumb();
+	echo $new_bread;
+}
+
+add_action( 'woocommerce_archive_description', 'woocommerce_custom_breadcrumb', 2 );
+add_action( 'woocommerce_before_single_product_summary', 'woocommerce_custom_breadcrumb', 2 );
+
+
+
 /////************//
 /// Show category name in category products //////////////////////
 //****************//
@@ -141,7 +167,7 @@ if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 if ( ! function_exists( 'change_product_title' ) ) {   
     function change_product_title( ) {
 	
-			echo $woo_title = '<h3><a href="'.get_permalink($product_id).'">'.get_the_title($product_id).'</a></h3>';
+			echo $woo_title = '<h3><a href="'.get_permalink($product_id).'"><span>'.get_the_title($product_id).'</span></a></h3>';
 			
     }
 }
@@ -205,6 +231,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 /////************//
 ///Replace WooThemes Breadcrumbs with Yoast breadcrumbs //////////////////////
 //****************//
+/*
 add_action( 'init', 'hh_breadcrumbs' );
 
 function hh_breadcrumbs() {
@@ -217,5 +244,6 @@ function hh_breadcrumbs() {
     }
 
 }
+*/
 
 ?>

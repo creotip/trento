@@ -28,7 +28,7 @@
 
 
 
-			<div id="content" class="content one-column">
+			<div id="content" class="content one-column content-home-template">
 
 				<div id="inner-content" class="wrap cf ">
 					
@@ -67,7 +67,7 @@
 
 									<article id="post-not-found" class="hentry cf">
 											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+												<h1><span><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></span></h1>
 										</header>
 											<section class="entry-content">
 												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
