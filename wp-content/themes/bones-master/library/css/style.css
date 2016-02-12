@@ -639,7 +639,7 @@ position: relative;
 }
 
 #inner-touch-header {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 .site-logo {
@@ -683,6 +683,159 @@ text-transform: uppercase;
 .wrap-toolbar{
  padding: 0 9px;
 }
+
+
+
+/*********************
+TOUCH NAVIGATION
+*********************/
+
+
+.status {
+    -webkit-transition: background .3s ease;
+    transition: background .3s ease;
+    position: fixed;
+    z-index: 9000;
+}
+
+.overlay { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+ 
+.close-touch-button .icon-button, .nav-click{
+ color: #fff;
+  transition: all 350ms ease;
+}
+
+
+.close-touch-button {
+	float: right;
+	padding-right: 0;
+	font-size: 2rem;
+	position: absolute;
+	right: 0;
+	margin: 5px;
+}
+.open-touch-button {
+    position: absolute;
+    top: auto;
+    left: 0;
+}
+
+
+.touch-nav-container {
+  background: #303030;
+  padding: 0;
+  text-align: center;
+  color: #FFF;
+  text-align: left; 
+}
+
+.touch-nav-container ul li {
+    padding-left: 1rem;
+}
+
+.touch-nav-container ul li a {
+   color: #fff;
+}
+
+
+.wrap-touch-nav {
+  background: #303030;
+  padding: 0;
+  transform: translate3d(-280px, 0, 0);
+  width: 100%;
+  max-width: 280px;
+  transition: all 350ms ease; 
+  position: fixed;
+  top: 0;
+      height: 100%;
+      z-index: 19821; 
+}
+
+.wrap-touch-nav.show-menu {
+  transform: translate3d(0px, 0, 0);
+}
+
+.open-touch-button,  .close-touch-button {
+  text-align: center;
+  display: block;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* btn */
+.menu {
+position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+.menu span {
+	margin: 0 auto;
+	position: relative;
+	top: 12px;
+}
+.menu span:before, .menu span:after {
+	position: absolute;
+	content: '';
+}
+.menu span, .menu span:before, .menu span:after {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    display: block;
+}
+.menu.nav-click span, .menu.nav-click span:before, .menu.nav-click span:after{
+  background-color: #fff;
+}
+
+.menu span:before {
+	margin-top: -9px;
+}
+.menu span:after {
+	margin-top: 9px;
+}
+
+/* example 5 */
+.creonav span {
+	-webkit-transition-duration: 0s; transition-duration: 0s;
+	-webkit-transition-delay: 0.2s; transition-delay: 0.2s;
+}
+.creonav.nav-click span {
+	background-color: rgba(0,0,0,0.0);
+	-webkit-transition-delay: 0.2s; transition-delay: 0.2s;
+}
+.creonav span:before {
+	-webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
+	-webkit-transition-duration: 0.2s; transition-duration: 0.2s;
+	-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;
+}
+.creonav.nav-click span:before {
+	margin-top: 0;
+	-webkit-transform: rotate(45deg); transform: rotate(45deg);
+	-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
+}
+.creonav span:after {
+	-webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
+	-webkit-transition-duration: 0.2s; transition-duration: 0.2s;
+	-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;
+}
+.creonav.nav-click span:after {
+	margin-top: 0;
+	-webkit-transform: rotate(-45deg); transform: rotate(-45deg);
+	-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
+}
+
+
+
+
 
 /*********************
 NAVIGATION STYLES
@@ -751,7 +904,8 @@ margin: 0;
 
 .single-title,
 .page-title,
-.entry-title {
+.entry-title, 
+.related.products h2 {
 margin: 0; 
 text-transform: uppercase;
 letter-spacing: 4px;
@@ -763,7 +917,8 @@ letter-spacing: 4px;
 .page-title:after, 
 .single-title:after, 
 .entry-title:after, 
-.woocommerce-page h1.page-title:after {
+.woocommerce-page h1.page-title:after, 
+.related.products h2:after {
     content: "";
     height: 6px;
     background: url(../images/txtr.png) repeat;
@@ -775,7 +930,10 @@ letter-spacing: 4px;
 }
 
 
-.single-title span, .page-title span, .entry-title span {
+.single-title span, 
+.page-title span, 
+.entry-title span, 
+.related.products h2 span{
     padding: 0 2rem;
     background: #fff;
     position: relative;
@@ -1706,6 +1864,12 @@ WOOCOMMERCE
     text-transform: uppercase;
 }
 
+.woocommerce .products ul, .woocommerce ul.products {
+    margin: 1rem 0 1em 0;
+    padding: 0;
+    list-style: none;
+    clear: both;
+}
 
 .woocommerce .woocommerce-ordering select {
     vertical-align: top;
@@ -1793,6 +1957,50 @@ WOOCOMMERCE
     margin: auto;
 }
 
+
+.woocommerce ul.products li.product .onsale {
+    top: 0;
+    right: 0;
+    left: auto;
+    margin: -.5em -.5em 0 0;
+    z-index: 14;
+    border-radius: 999px;
+    display: table;
+	    line-height: normal;
+	    background-color: #DD4B39;
+}
+
+.woocommerce ul.products li.product .onsale span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFF;
+}
+
+.wc-new-badge {
+    position: absolute;
+    background: #3D8EB9;
+    color: #fff;
+    top: 0;
+    left: auto;
+    margin: -.5em -.5em 0 0;
+    z-index: 14;
+    border-radius: 999px;
+    display: table;
+    line-height: normal;
+    min-height: 3.236em;
+    min-width: 3.236em;
+    padding: .202em;
+    font-size: .857em;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wc-new-badge span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #FFF;
+}
 
 /*** Product Page ***/
 

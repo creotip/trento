@@ -196,10 +196,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 			}
 
 			// Setup styles
+			/*
 			function wc_pac_styles() {
 				wp_enqueue_style( 'pac-styles', plugins_url( '/assets/css/pac.css', __FILE__ ) );
 				wp_enqueue_style( 'pac-layout-styles', plugins_url( '/assets/css/layout.css', __FILE__ ), '', '', 'only screen and (min-width: ' . apply_filters( 'woocommerce_style_smallscreen_breakpoint', $breakpoint = '768px' ) . ')' );
 			}
+			*/
 
 			// Fire customisations!
 			function wc_pac_fire_customisations() {

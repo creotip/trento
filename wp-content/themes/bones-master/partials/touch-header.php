@@ -1,8 +1,33 @@
+
+	<div class="wrap-touch-nav">
+		<div class="close-touch-button" >
+			<a href="#" class="menu creonav nav-click"><span></span></a>
+		</div>
+		<div class="touch-nav-container">
+						<?php wp_nav_menu(array(
+    					         'container' => false,                           // remove nav container
+    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+    					         'menu_class' => 'touch-nav top-nav cf',               // adding custom nav class
+    					         'theme_location' => 'main-nav',                 // where it's located in the theme
+    					         'before' => '',                                 // before the menu
+        			               'after' => '',                                  // after the menu
+        			               'link_before' => '',                            // before each link
+        			               'link_after' => '',                             // after each link
+        			               'depth' => 0,                                   // limit the depth of the nav
+    					         'fallback_cb' => ''                             // fallback function (if there is one)
+						)); ?>
+		</div>
+	</div>  
+	<div class="status"></div>	
+
+
 <div id="inner-touch-header" class="wrap cf md-hide">
- <div class="touch-nav-wrap col">
-    <i class="fa fa-bars fa-2x left"></i>
-  </div> 
-  
+	
+<div class="open-touch-button" >
+	<a href="#" class="menu creonav"><span></span></a>
+</div>
+   
 <div class="touch-logo-wrap">
 					<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
 							<div class='site-logo'>
@@ -22,3 +47,6 @@
 					<?php endif; ?>
   </div>  
 </div>
+
+
+

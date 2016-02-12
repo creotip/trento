@@ -149,6 +149,20 @@ function miniCart(){
 
 }
 
+function touchMenu() {
+	jQuery('.open-touch-button, .close-touch-button').click(touch_menu);
+		jQuery('.status').click(touch_menu);
+		function touch_menu(){
+				jQuery(".wrap-touch-nav").toggleClass('show-menu');  
+				jQuery('.status').toggleClass("overlay"); 
+	}
+	
+}
+
+
+
+
+
 /*
  * Put all your regular jQuery in here.
 */
@@ -161,6 +175,8 @@ jQuery(document).ready(function($) {
   bottomFooter();
 	
   miniCart();
+	
+	touchMenu();
 	
 	jQuery('.imagewrapper').slick({
 		speed: 200,
