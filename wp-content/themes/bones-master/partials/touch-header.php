@@ -3,6 +3,17 @@
 		<div class="close-touch-button" >
 			<a href="#" class="menu creonav nav-click"><span></span></a>
 		</div>
+		<div class="touch-search-container">	
+				<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
+						<div>
+								<label for="s" class="screen-reader-text"><?php _e('Search for:','bonestheme'); ?></label>
+								<input type="search" id="s" name="s" value="" />
+
+								<button type="submit" id="searchsubmit" ><?php _e('Search','bonestheme'); ?></button>
+						</div>
+				</form>		
+		
+		</div>
 		<div class="touch-nav-container">
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container

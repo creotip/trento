@@ -708,7 +708,9 @@ h3.widget-title
 .clearfix:after { clear: both }
 
 .left  { float: left }
-.right { float: right }
+.right, 
+.wrap-search
+{ float: right }
 
 .fit { max-width: 100% }
 

@@ -107,6 +107,8 @@
         			               'depth' => 0,                                   // limit the depth of the nav
     					         'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
+						
+						<div class="wrap-search"><i class="fa fa-search"></i></div>
 
 					</nav>
 

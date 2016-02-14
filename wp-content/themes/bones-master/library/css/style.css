@@ -1855,13 +1855,18 @@ WOOCOMMERCE
     font-size: 2rem;
 }
 
-.woocommerce .woocommerce-breadcrumb {
+.woocommerce.woocommerce-page .woocommerce-breadcrumb {
     margin: 0 0 1em;
     padding: 0;
     font-size: .7rem;
     color: #777;
     text-align: center;
     text-transform: uppercase;
+    
+}
+
+.single.woocommerce .woocommerce-breadcrumb {
+text-align: left;
 }
 
 .woocommerce .products ul, .woocommerce ul.products {
