@@ -19,12 +19,12 @@ CREATE TABLE `wp_woocommerce_sessions` (
   `session_expiry` bigint(20) NOT NULL,
   PRIMARY KEY (`session_key`),
   UNIQUE KEY `session_id` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 LOCK TABLES `wp_woocommerce_sessions` WRITE;
 /*!40000 ALTER TABLE `wp_woocommerce_sessions` DISABLE KEYS */;
-INSERT INTO `wp_woocommerce_sessions` VALUES (11,'d6af51cb293ec7df5a79f70962157f3f','a:18:{s:4:\"cart\";s:304:\"a:1:{s:32:\"fa7cdfad1a5aaf8370ebeda47a1ff1c3\";a:9:{s:10:\"product_id\";i:164;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:20;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";i:20;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:15:\"applied_coupons\";s:6:\"a:0:{}\";s:23:\"coupon_discount_amounts\";s:6:\"a:0:{}\";s:27:\"coupon_discount_tax_amounts\";s:6:\"a:0:{}\";s:21:\"removed_cart_contents\";s:6:\"a:0:{}\";s:19:\"cart_contents_total\";d:20;s:5:\"total\";i:0;s:8:\"subtotal\";i:20;s:15:\"subtotal_ex_tax\";i:20;s:9:\"tax_total\";i:0;s:5:\"taxes\";s:6:\"a:0:{}\";s:14:\"shipping_taxes\";s:6:\"a:0:{}\";s:13:\"discount_cart\";i:0;s:17:\"discount_cart_tax\";i:0;s:14:\"shipping_total\";i:0;s:18:\"shipping_tax_total\";i:0;s:9:\"fee_total\";i:0;s:4:\"fees\";s:6:\"a:0:{}\";}',1455478755);
+INSERT INTO `wp_woocommerce_sessions` VALUES (12,'48151a9a0a955343851ecc6af286dc4b','a:18:{s:4:\"cart\";s:304:\"a:1:{s:32:\"149e9677a5989fd342ae44213df68868\";a:9:{s:10:\"product_id\";i:170;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:35;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";i:35;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:15:\"applied_coupons\";s:6:\"a:0:{}\";s:23:\"coupon_discount_amounts\";s:6:\"a:0:{}\";s:27:\"coupon_discount_tax_amounts\";s:6:\"a:0:{}\";s:21:\"removed_cart_contents\";s:6:\"a:0:{}\";s:19:\"cart_contents_total\";d:35;s:5:\"total\";i:0;s:8:\"subtotal\";i:35;s:15:\"subtotal_ex_tax\";i:35;s:9:\"tax_total\";i:0;s:5:\"taxes\";s:6:\"a:0:{}\";s:14:\"shipping_taxes\";s:6:\"a:0:{}\";s:13:\"discount_cart\";i:0;s:17:\"discount_cart_tax\";i:0;s:14:\"shipping_total\";i:0;s:18:\"shipping_tax_total\";i:0;s:9:\"fee_total\";i:0;s:4:\"fees\";s:6:\"a:0:{}\";}',1455697175);
 /*!40000 ALTER TABLE `wp_woocommerce_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
