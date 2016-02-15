@@ -642,9 +642,14 @@ position: relative;
     padding: 10px 0;
 }
 
+.site-navigation {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .site-logo {
-float: left;
-max-width: 140px;
+    display: table-cell;
+    vertical-align: middle;	
 }
 
 .touch-logo-wrap {
@@ -664,7 +669,10 @@ max-width: 140px;
 }
 
 #logo {
-margin: 0; }
+margin: 0; 
+float: left;
+max-width: 140px;
+}
 #logo a {
 color: white; }
 #logo a img {
@@ -748,10 +756,11 @@ TOUCH NAVIGATION
 .wrap-touch-nav {
   background: #303030;
   padding: 0;
-  transform: translate3d(-280px, 0, 0);
+    /*transform: translate3d(-280px, 0, 0);*/
+    left: -280px;
   width: 100%;
   max-width: 280px;
-  transition: all 350ms ease; 
+transition: all 400ms ease;
   position: fixed;
   top: 0;
       height: 100%;
@@ -759,7 +768,8 @@ TOUCH NAVIGATION
 }
 
 .wrap-touch-nav.show-menu {
-  transform: translate3d(0px, 0, 0);
+/* transform: translate3d(0px, 0, 0); */
+    left: 0;
 }
 
 .open-touch-button,  .close-touch-button {
@@ -1336,14 +1346,11 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 .nav {
-border: 0;
-position: absolute;
-top: 50%;
-right: 0;
-margin-top: -17px;
-font-size: 11px;
-letter-spacing: 4px;
-text-transform: uppercase;
+    border: 0;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    float: right;
 }
 .nav ul {
 background: #252525;

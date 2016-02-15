@@ -709,10 +709,12 @@ h3.widget-title
 
 .left  { float: left }
 .right, 
-.wrap-search
+.wrap-search,
+.wrap-minicart
 { float: right }
 
 .fit { max-width: 100% }
+.full-width{float:left; width: 100%;}
 
 .border-box { box-sizing: border-box }
 

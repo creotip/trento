@@ -72,46 +72,54 @@
 				</div>
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 				<div id="inner-header" class="wrap cf md-show">
-
-					<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
-							<div class='site-logo'>
-									<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a></div>							
-							</div>
-					<?php else : ?>
-							<div class="site-logo" itemscope itemtype="http://schema.org/Organization">					
-								<hgroup>
-										<h1 class="site-title m0"  itemprop="name">
-											<a class='black' href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-												<span>
-												<?php bloginfo( 'name' ); ?>
-													</span>
-											</a>
-										</h1>
-<!-- 										<h2 class="site-description" itemprop="description"><?php //bloginfo( 'description' ); ?></h2> -->
-								</hgroup>
-							</div>	
-					<?php endif; ?>
-
-
-					<nav class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
+					<div class="wrap-nav-logo table full-width relative">
 						
-						<div class="wrap-search"><i class="fa fa-search"></i></div>
+					
 
-					</nav>
+						<?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+								<div class='site-logo'>
+										<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a></div>							
+								</div>
+						<?php else : ?>
+								<div class="site-logo" itemscope itemtype="http://schema.org/Organization">					
+									<hgroup>
+											<h1 class="site-title m0"  itemprop="name">
+												<a class='black' href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+													<span>
+													<?php bloginfo( 'name' ); ?>
+														</span>
+												</a>
+											</h1>
+	<!-- 										<h2 class="site-description" itemprop="description"><?php //bloginfo( 'description' ); ?></h2> -->
+									</hgroup>
+								</div>	
+						<?php endif; ?>
 
+
+						<nav class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<div class="nav-icon-block">
+								<div class="wrap-search ml2"><i class="fa fa-search"></i></div>
+								<div class="wrap-minicart ml2"><i class="fa fa-shopping-basket"></i></div>						
+							</div>							
+							<?php wp_nav_menu(array(
+												 'container' => false,                           // remove nav container
+												 'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+												 'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+												 'menu_class' => 'nav top-nav cf',               // adding custom nav class
+												 'theme_location' => 'main-nav',                 // where it's located in the theme
+												 'before' => '',                                 // before the menu
+															 'after' => '',                                  // after the menu
+															 'link_before' => '',                            // before each link
+															 'link_after' => '',                             // after each link
+															 'depth' => 0,                                   // limit the depth of the nav
+												 'fallback_cb' => ''                             // fallback function (if there is one)
+							)); ?>
+
+
+
+
+						</nav>
+					</div>
 				</div>
 				
 				<?php require_once( 'partials/touch-header.php' ); ?>
