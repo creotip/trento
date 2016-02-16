@@ -742,10 +742,13 @@ TOUCH NAVIGATION
   text-align: center;
   color: #FFF;
   text-align: left; 
+      text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .touch-nav-container ul li {
     padding-left: 1rem;
+        line-height: 35px
 }
 
 .touch-nav-container ul li a {
@@ -765,6 +768,7 @@ transition: all 400ms ease;
   top: 0;
       height: 100%;
       z-index: 19821; 
+          overflow: scroll;
 }
 
 .wrap-touch-nav.show-menu {
@@ -778,6 +782,18 @@ transition: all 400ms ease;
   color: #fff;
   font-size: 2em;
   cursor: pointer;
+}
+
+.touch-nav > .menu-item-has-children > ul.sub-menu {
+    display: none;
+}
+
+.touch-nav .tog.fa{
+    float: right;
+    padding: 0 1rem;
+
+        font: normal normal normal 14px/1 FontAwesome;
+                line-height: 35px;
 }
 
 /* btn */
@@ -1242,7 +1258,7 @@ margin-bottom: 1.5em; }
 .widgettitle:after{
     content: "";
     height: 4px;
-    background: url(../images/txtr.png) repeat scroll 0 0 #FFF;
+    background: url(../images/sep-2.png) repeat scroll 0 0 #FFF;
     float: left;
     width: 100%;
 }
@@ -1432,11 +1448,21 @@ SIDEBARS & ASIDES
 margin-top: 2.2em; }
 
 .widgettitle {
-margin-bottom: 0.75em; }
+    margin-bottom: 2em; 
+    
+    }
+    
+.widgettitle span {
+    padding-bottom: .4rem;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 0.9375rem;
+}
 
 .widget {
 padding: 0 10px;
-margin: 2.2em 0; }
+margin: 2.2em 0; 
+}
 .widget ul li {
 margin-bottom: 0.75em;
 /* deep nesting */ }
@@ -1445,8 +1471,8 @@ margin-top: 0.75em;
 padding-left: 1em; }
 
 .sidebar-top .widgettitle:after, .sidebar-top .widgettitle:before {
-    content: "";
-    height: 6px;
+content: "";
+    height: 5px;
     width: 10%;
     display: inline-block;
     position: relative;
@@ -1454,7 +1480,7 @@ padding-left: 1em; }
     margin: 0 1rem;
     padding: 0px;
     float: none;
-    background: url(../images/sep-1.png) repeat scroll 0 0 #FFF;
+    background: url(../images/sep-2.png) repeat scroll 0 0 #FFF;
 }
 
   
@@ -1853,6 +1879,33 @@ WOOCOMMERCE
     visibility: visible;
 }
 
+/*** Rating ***/
+
+.woocommerce .star-rating {
+    float: right;
+    overflow: hidden;
+    position: relative;
+    height: 1em;
+    line-height: 1;
+    font-size: 0.6875rem;
+    width: 5.4em;
+    font-family: star;
+}
+
+/*** Widgets ***/
+
+.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img {
+    float: right;
+    margin-left: 4px;
+    width: 100%;
+    max-width: 5rem;
+    height: auto;
+    box-shadow: none;
+}
+
+ul.product_list_widget .amount {
+    font-weight: bold;
+}
 
 /*** Category ***/
 .woocommerce-page h1.page-title {

@@ -36,7 +36,7 @@
 <div id="inner-touch-header" class="wrap cf md-hide">
 	
 <div class="open-touch-button" >
-	<a href="#" class="menu creonav"><span></span></a>
+	<span href="#" class="menu creonav"><span></span></span>
 </div>
    
 <div class="touch-logo-wrap">

@@ -157,6 +157,21 @@ function touchMenu() {
 				jQuery('.status').toggleClass("overlay"); 
 	}
 	
+jQuery(".touch-nav > .menu-item-has-children > a").before("<i class='tog fa fa-angle-down btn'></i>");
+jQuery(".tog").click(function(e) {
+    e.preventDefault();
+    if (jQuery(this).hasClass("expanded")) {
+        jQuery(this).removeClass("expanded");
+        jQuery(this).parent().children("ul").stop(true, true).slideUp("fast");
+    } else {
+        jQuery("#items a.expanded").removeClass("expanded");
+        jQuery(this).addClass("expanded");
+        jQuery(".sub-items").filter(":visible").slideUp("fast");
+        jQuery(this).parent().children("ul").stop(true, true).slideDown("fast");
+    }
+});
+
+	
 }
 
 

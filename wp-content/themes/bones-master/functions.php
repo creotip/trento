@@ -269,13 +269,13 @@ if ( ! function_exists( 'wpforge_footer_sidebar_class' ) ) {
 				$class = 'md-col-12 lg-col-12';
 				break;
 			case '2':
-				$class = 'md-col-12 lg-col-6';
+				$class = 'sm-col-6 md-col-6 lg-col-6 col-12 col';
 				break;
 			case '3':
-				$class = 'md-col-12 lg-col-4';
+				$class = 'sm-col-4 md-col-4 lg-col-4 col-12 col';
 				break;		
 			case '4':
-				$class = 'md-col-12 lg-col-3';
+				$class = 'sm-col-3 md-col-3 lg-col-3 col-12 col';
 				break;						
 		}
 
