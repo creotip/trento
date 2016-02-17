@@ -46,25 +46,24 @@
 				<div class="toolbar">
 					<div class="wrap wrap-toolbar relative">
 						
-							 <?php global $woocommerce; ?> 
-								<div class="mini-cart right">							  
-									<!-- Dropdown cart -->
-									<?php if (class_exists('Woocommerce')) { ?>
-										<a href="#" class="toggle-cart-dropdown">
+							<?php global $woocommerce; ?> 
+							<div class="mini-cart right">							  
+								<!-- Dropdown cart -->
+								<?php if (class_exists('Woocommerce')) { ?>
+									<a href="#" class="toggle-cart-dropdown">
 
-											<span class="mini-cart-item-count"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
-											<span><?php echo __('Items'); ?></span>
-											<span class="mini-cart-item-amount">/<?php echo $woocommerce->cart->get_cart_total(); ?></span>
-											@
-										</a>
+										<span class="mini-cart-item-count"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
+										<span><?php echo __('Items'); ?></span>
+										<span class="mini-cart-item-amount">/<?php echo $woocommerce->cart->get_cart_total(); ?></span>
+									
+									</a>
 
-										<div class="mini-cart-dropdown absolute right-0">
-											<?php the_widget( 'WC_Widget_Cart' ); ?> 
-										</div>			
-									<?php } ?>
-									<!-- End Dropdown cart -->							  
-
-								</div>	
+									<div class="mini-cart-dropdown absolute right-0">
+										<?php the_widget( 'WC_Widget_Cart' ); ?> 
+									</div>			
+								<?php } ?>
+								<!-- End Dropdown cart -->							  
+							</div>	
 						
 						<span>Cart<i class="fa fa-shopping-bag px1"></i></span>
 						<span class="left">FREE SHIPPING ON ORDERS $75!</span>
@@ -98,8 +97,26 @@
 
 						<nav class="site-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<div class="nav-icon-block">
-								<div class="wrap-search ml2"><i class="fa fa-search"></i></div>
-								<div class="wrap-minicart ml2"><i class="fa fa-shopping-basket"></i></div>						
+								<div class="wrap-nav-search">
+									<div id="toggle-search" class="wrap-search btn"><i class="fa fa-search"></i></div>
+									<form id="search-form" role="search" method="get"  class="nav-searchform" action="<?php echo home_url( '/' ); ?>">
+										<fieldset>
+											<input id="s" name="s" value=""  type="search" placeholder="Search (for example: shirt)"  />
+										</fieldset>
+										<button type="submit" value="Submit" form="search-form"><i class="fa fa-search"></i></button>
+									</form>
+								</div>
+														
+								<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+		
+									<div class="wrap-minicart btn">
+										<i class="fa fa-shopping-basket">
+											<span class="basket-count mini-cart-item-count">
+												<?php echo $woocommerce->cart->cart_contents_count; ?>
+											</span>
+										</i>
+									</div>	
+								<?php endif; ?>			
 							</div>							
 							<?php wp_nav_menu(array(
 												 'container' => false,                           // remove nav container

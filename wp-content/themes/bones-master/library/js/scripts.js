@@ -174,7 +174,30 @@ jQuery(".tog").click(function(e) {
 	
 }
 
+function searchDropdown() {
 
+		// Handle click on toggle search button
+		jQuery('#toggle-search').click(function() {
+			jQuery('#search-form, #toggle-search').toggleClass('open');
+			return false;
+		});
+
+		// Handle click on search submit button
+		jQuery('#search-form input[type=submit]').click(function() {
+			jQuery('#search-form, #toggle-search').toggleClass('open');
+			return true;
+		});
+
+		// Clicking outside the search form closes it
+		jQuery(document).click(function(event) {
+			var target = jQuery(event.target);
+      
+			if (!target.is('#toggle-search') && !target.closest('#search-form').size()) {
+				jQuery('#search-form, #toggle-search').removeClass('open');
+			}
+		});
+
+}
 
 
 
@@ -190,6 +213,8 @@ jQuery(document).ready(function($) {
   bottomFooter();
 	
   miniCart();
+  
+  searchDropdown();
 	
 	touchMenu();
 	
