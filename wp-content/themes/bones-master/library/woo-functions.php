@@ -24,8 +24,8 @@ add_action( 'init', 'yourtheme_woocommerce_image_dimensions', 1 );
  */
 function yourtheme_woocommerce_image_dimensions() {
   	$catalog = array(
-		'width' 	=> '350',	// px
-		'height'	=> '400',	// px
+		'width' 	=> '400',	// px
+		'height'	=> '450',	// px
 		'crop'		=> 1 		// true
 	);
 
@@ -157,7 +157,7 @@ add_action( 'woocommerce_before_shop_loop_item', 'mycode_woocommerce_template_lo
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 
-// add a new fonction to the hook
+// add a new function to the hook
 if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
     function woocommerce_template_loop_product_title() {
         echo change_product_title();
@@ -227,6 +227,15 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
     }
 }
 
+
+
+/////************//
+/// Set number of columns for thumbnails in product page//////////////////////
+//****************//
+add_filter ( 'woocommerce_product_thumbnails_columns', 'xx_thumb_cols' );
+ function xx_thumb_cols() {
+     return 4; // .last class applied to every 4th thumbnail
+ }
 
 /////************//
 ///Replace WooThemes Breadcrumbs with Yoast breadcrumbs //////////////////////

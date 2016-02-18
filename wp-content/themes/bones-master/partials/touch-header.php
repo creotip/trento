@@ -1,36 +1,37 @@
-
-	<div class="wrap-touch-nav">
-		<div class="close-touch-button" >
-			<a href="#" class="menu creonav nav-click"><span></span></a>
-		</div>
-		<div class="touch-search-container">	
-				<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
-						<div>
-								<label for="s" class="screen-reader-text"><?php _e('Search for:','bonestheme'); ?></label>
-								<input type="search" id="s" name="s" value="" />
-
-								<button type="submit" id="searchsubmit" ><?php _e('Search','bonestheme'); ?></button>
-						</div>
-				</form>		
-		
-		</div>
-		<div class="touch-nav-container">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'touch-nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-		</div>
-	</div>  
-	<div class="status"></div>	
+<div class="wrap-touch-nav">
+	<!--<div class="close-touch-button" >
+		<a href="#" class="menu creonav nav-click"><span></span></a>
+	</div>-->
+	<div class="touch-search-container">	
+			<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
+					<div>
+							<div class="col col-10">
+								<input class="" placeholder="search..." type="search" id="s" name="s" value="" />
+							</div>
+							<div class="col col-2">
+								<button class="white btn-outline not-rounded border-none " type="submit" id="searchsubmit" ><i class="fa fa-search"></i></button>
+							</div>
+					</div>
+			</form>		
+	
+	</div>
+	<div class="touch-nav-container">
+					<?php wp_nav_menu(array(
+				         'container' => false,                           // remove nav container
+				         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+				         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+				         'menu_class' => 'touch-nav top-nav cf',               // adding custom nav class
+				         'theme_location' => 'main-nav',                 // where it's located in the theme
+				         'before' => '',                                 // before the menu
+			     'after' => '',                                  // after the menu
+			     'link_before' => '',                            // before each link
+			     'link_after' => '',                             // after each link
+			     'depth' => 0,                                   // limit the depth of the nav
+				         'fallback_cb' => ''                             // fallback function (if there is one)
+					)); ?>
+	</div>
+</div>  
+<div class="status"></div>	
 
 
 <div id="inner-touch-header" class="wrap cf md-hide">
@@ -57,6 +58,10 @@
 							</div>	
 					<?php endif; ?>
   </div>  
+  
+  <div class="cart-touch-button" >
+	<button class="btn"><i class="fa fa-shopping-bag px1"></i></button>
+</div>
 </div>
 
 
