@@ -1894,6 +1894,12 @@ a.il-load-more:hover {
     display: inline-block;
     position: relative;
 	  overflow: hidden;
+    margin: 0 10px 20px 0;
+    width: calc(50% - 5px);	  
+}
+
+.insta-item-list:nth-child(2n+2) {
+    margin-right: 0;
 }
 
 .il-photo__meta {
@@ -1908,11 +1914,7 @@ a.il-load-more:hover {
     transition: all 300ms ease;
 } 
 
-.insta-item-list:hover .il-photo__meta {
-    opacity: 1;
-    visibility: visible;
-    bottom: 0;
-}
+
 
 .il-photo__likes {
     float: left;
@@ -1925,6 +1927,43 @@ a.il-load-more:hover {
 .insta-item-list .il-photo__img {
 margin: 0;
 transition: all 350ms ease-out;	
+}
+
+
+
+
+.il-photo__caption {
+	margin: 0 0 20px 0;
+}
+
+.il-photo__likes:before {
+/* 	content: "Likes: "; */
+}
+
+.il-photo__comments:before {
+/* 	content: "Comments: "; */
+}
+
+@media screen and (min-width: 40.063em) {
+	
+	.insta-item-list {
+		margin: 0 40px 20px 0;
+		width: calc(50% - 20px);
+	}
+	
+	.insta-item-list:nth-child(2n+2) {
+		margin-right: 0;
+	}
+	
+	.il-photo__caption {
+		height: 120px;
+		overflow-y: scroll;
+	}
+	
+.insta-item-list:hover .il-photo__meta {
+    opacity: 1;
+    visibility: visible;
+    bottom: 0;
 }
 
 .insta-item-list:hover .il-photo__img {
@@ -1940,38 +1979,11 @@ transition: all 350ms ease-out;
     -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
     overflow: hidden;
-}
-
-.il-photo__caption {
-	margin: 0 0 20px 0;
-}
-
-.il-photo__likes:before {
-/* 	content: "Likes: "; */
-}
-
-.il-photo__comments:before {
-/* 	content: "Comments: "; */
-}
-
-@media screen and (min-width: 600px) {
+}	
 	
-	.insta-item-list {
-		margin: 0 40px 20px 0;
-		width: calc(50% - 20px);
-	}
-	
-	.insta-item-list:nth-child(2n+2) {
-		margin-right: 0;
-	}
-	
-	.il-photo__caption {
-		height: 120px;
-		overflow-y: scroll;
-	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 64.063em) {
 	
 	.insta-item-list {
 		margin: 0 40px 20px 0;

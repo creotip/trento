@@ -200,6 +200,37 @@ function searchDropdown() {
 }
 
 
+function wooCatCarousel() { 
+
+
+     // More than one slide - initialize the carousel
+    if ( jQuery('.imagewrapper').children('div').length > 2) 
+    
+		{
+
+		jQuery('.imagewrapper').slick({
+		// options go here
+		speed: 200,
+		prevArrow: '<div class="rps-prev"><i class="fa fa-angle-left"></i></div>',
+		nextArrow: '<div class="rps-next"><i class="fa fa-angle-right"></i></div>'		
+		});
+		
+		jQuery('.imagewrapper').addClass('one-image');
+		
+		} 
+
+		else {
+		
+		jQuery('.imagewrapper').slick('unslick');
+		
+		
+		} 
+
+
+
+}
+
+
 
 /*
  * Put all your regular jQuery in here.
@@ -214,14 +245,12 @@ jQuery(document).ready(function($) {
 	
   miniCart();
   
-  searchDropdown();
+searchDropdown();
 	
-	touchMenu();
+touchMenu();
+
+wooCatCarousel();
 	
-	jQuery('.imagewrapper').slick({
-		speed: 200,
-			prevArrow: '<div class="rps-prev"><i class="fa fa-angle-left"></i></div>',
-			nextArrow: '<div class="rps-next"><i class="fa fa-angle-right"></i></div>'
-	});
+
 
 }); /* end of as page load scripts */
